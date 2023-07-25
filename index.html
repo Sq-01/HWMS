@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Ward Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Hospital Ward Management System</h1>
+    </div>
+
+    <div class="container">
+        <!-- Patient Tile -->
+        <div class="tile patient-tile">Add Patient</div>
+
+        <!-- Doctor Tile -->
+        <div class="tile doctor-tile">Add Doctor</div>
+
+        <!-- Nurse Tile -->
+        <div class="tile nurse-tile">Add Nurse</div>
+
+        <!-- Ward Staff Tile -->
+        <div class="tile ward-staff-tile">Add Ward Staff</div>
+
+        <!-- Admission Records Tile -->
+        <div class="tile admission-records-tile">Admission Records</div>
+
+        <!-- Discharge Records Tile -->
+        <div class="tile discharge-records-tile">Discharge Records</div>
+
+        <!-- Patient Form -->
+        <div class="form-container patient-form">
+            <h2>Add Patient</h2>
+            <form id="add-patient-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <button type="submit">Add Patient</button>
+            </form>
+        </div>
+
+        <!-- Patient List -->
+        <div class="list-container patient-list">
+            <h2>Patients List</h2>
+            <table class="data-table" id="patients-table">
+                <thead>
+                    <tr>
+                        <th>Patient ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody id="patients-table-body"></tbody>
+            </table>
+        </div>
+
+        <!-- Add Doctor Form -->
+        <div class="form-container doctor-form">
+            <h2>Add Doctor</h2>
+            <form id="add-doctor-form">
+                <label for="doctor-name">Name:</label>
+                <input type="text" id="doctor-name" required>
+
+                <label for="specialization">Specialization:</label>
+                <input type="text" id="specialization" required>
+
+                <button type="submit">Add Doctor</button>
+            </form>
+        </div>
+
+        <!-- Doctors List -->
+        <div class="list-container doctor-list">
+            <h2>Doctors List</h2>
+            <table class="data-table" id="doctors-table">
+                <thead>
+                    <tr>
+                        <th>Doctor ID</th>
+                        <th>Name</th>
+                        <th>Specialization</th>
+                    </tr>
+                </thead>
+                <tbody id="doctors-table-body"></tbody>
+            </table>
+        </div>
+
+        <!-- Add Nurse Form -->
+        <div class="form-container nurse-form">
+            <h2>Add Nurse</h2>
+            <form id="add-nurse-form">
+                <label for="nurse-name">Name:</label>
+                <input type="text" id="nurse-name" required>
+
+                <button type="submit">Add Nurse</button>
+            </form>
+        </div>
+
+        <!-- Nurses List -->
+        <div class="list-container nurse-list">
+            <h2>Nurses List</h2>
+            <table class="data-table" id="nurses-table">
+                <thead>
+                    <tr>
+                        <th>Nurse ID</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody id="nurses-table-body"></tbody>
+            </table>
+        </div>
+
+        <!-- Add Ward Staff Form -->
+        <div class="form-container ward-staff-form">
+            <h2>Add Ward Staff</h2>
+            <form id="add-ward-staff-form">
+                <label for="ward-staff-name">Name:</label>
+                <input type="text" id="ward-staff-name" required>
+
+                <button type="submit">Add Ward Staff</button>
+            </form>
+        </div>
+
+        <!-- Ward Staff List -->
+        <div class="list-container ward-staff-list">
+            <h2>Ward Staff List</h2>
+            <table class="data-table" id="ward-staff-table">
+                <thead>
+                    <tr>
+                        <th>Staff ID</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody id="ward-staff-table-body"></tbody>
+            </table>
+        </div>
+
+        <!-- Add Admission Record Form -->
+        <div class="form-container admission-record-form">
+            <h2>Admit Patient</h2>
+            <form id="add-admission-record-form">
+                <label for="patient-id">Patient ID:</label>
+                <input type="number" id="patient-id" required>
+
+                <label for="room-id">Room ID:</label>
+                <input type="number" id="room-id" required>
+
+                <button type="submit">Admit Patient</button>
+            </form>
+        </div>
+
+        <!-- Admission Records List -->
+        <div class="list-container admission-records-list">
+            <h2>Admission Records List</h2>
+            <table class="data-table" id="admission-records-table">
+                <thead>
+                    <tr>
+                        <th>Record ID</th>
+                        <th>Patient ID</th>
+                        <th>Admission Date</th>
+                        <th>Room ID</th>
+                    </tr>
+                </thead>
+                <tbody id="admission-records-table-body"></tbody>
+            </table>
+        </div>
+
+         <!-- Add Discharge Record Form -->
+         <div class="form-container discharge-record-form">
+            <h2>Discharge Patient</h2>
+            <form id="add-discharge-record-form">
+                <label for="patient-id-discharge">Patient ID:</label>
+                <input type="number" id="patient-id-discharge" required>
+
+                <button type="submit">Discharge Patient</button>
+            </form>
+        </div>
+
+        <!-- Discharge Records List -->
+        <div class="list-container discharge-records-list">
+            <h2>Discharge Records List</h2>
+            <table class="data-table" id="discharge-records-table">
+                <thead>
+                    <tr>
+                        <th>Record ID</th>
+                        <th>Patient ID</th>
+                        <th>Discharge Date</th>
+                    </tr>
+                </thead>
+                <tbody id="discharge-records-table-body"></tbody>
+            </table>
+        </div>
+        <script src="app.js"></script>
+        
+    </body>
+</html>
